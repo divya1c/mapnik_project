@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map []>
+<Map minimum-version="2.0.0">
+
+<Style name="polygon">
+    <Rule>
+        <MaxScaleDenominator>200000000</MaxScaleDenominator>
+        <MinScaleDenominator>500</MinScaleDenominator>
+        <LineSymbolizer stroke-width="0.5" stroke-opacity="0.6"/>
+    </Rule>
+</Style>
+
+<Layer name="world" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+	<StyleName>polygon</StyleName>
+		<Datasource>
+		    <Parameter name="table">damageblocks</Parameter>
+		    <Parameter name="type">postgis</Parameter>
+		    <Parameter name="user">divya</Parameter>
+		    <Parameter name="dbname">development</Parameter>
+		    <Parameter name="estimate_extent">true</Parameter>
+		</Datasource>
+</Layer>
+</Map>

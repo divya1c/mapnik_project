@@ -1,0 +1,26 @@
+<html>
+<head>
+	<link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet-0.6/leaflet.css' />
+	<script src='http://cdn.leafletjs.com/leaflet-0.6/leaflet.js' type='text/javascript'></script>
+	<style type="text/css">
+		html, body {height: 100%;overflow: hidden;}
+		#map {height: 100%;}
+	</style>
+</head>
+<body>
+	<div id="map"></div>
+	<script>
+		//Setting the map variable up with a centre point and zoom level
+		var map = new L.Map('map', {
+			center: [37.770, -122.41],
+			zoom: 10
+		});
+		//Setting the background map tiles, in this case vanilla Open Street Map
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+			attribution: '© OpenStreetMap contributors'
+		}).addTo(map);
+		//Setting the tile layer, with the appropriate connection string
+		L.tileLayer('http://localhost:8000/{z}/{x}/{y}.png').addTo(map);
+	</script>
+</body>
+</html>
